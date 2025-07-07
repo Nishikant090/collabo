@@ -8,6 +8,9 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+const taskRoutes = require('./routes/task');
+app.use('/api', taskRoutes);
+
 
 // Socket.IO setup
 const io = new Server(server, {
